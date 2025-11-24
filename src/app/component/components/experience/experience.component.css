@@ -1,0 +1,93 @@
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 80px 20px;
+    box-sizing: border-box;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #222;
+    width: 100%;
+}
+
+
+#experience {
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#experience h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #222;
+}
+
+.experience-item {
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.experience-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.experience-item h3:hover {
+    color: #007bff;
+}
+
+.experience-item .company {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 3px;
+}
+
+.experience-item .duration {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+/* remove default bullets */
+.experience-item ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.experience-item ul li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+    transition: color 0.3s, transform 0.2s;
+    position: relative;
+    padding-left: 25px; /* space for arrow */
+}
+
+/* arrow bullet */
+.experience-item ul li::before {
+    content: "➤";        /* arrow symbol */
+    position: absolute;
+    left: 0;
+    color: #333;         /* normal arrow color */
+    transition: color 0.3s ease;
+}
+
+/* hover effect */
+.experience-item ul li:hover {
+    transform: translateX(5px);
+    cursor: pointer;
+}
+
+.experience-item ul li:hover::before {
+    color: #007bff;      /* arrow turns blue */
+}

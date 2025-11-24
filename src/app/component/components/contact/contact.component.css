@@ -1,0 +1,106 @@
+/* Section & Heading */
+section.contact-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 80px 20px;
+    box-sizing: border-box;
+}
+
+section.contact-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #222;
+    width: 100%;
+}
+
+/* Flex Rows for Inputs */
+.form-row, .form-inputs-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.form-row .col, .form-inputs-row .col {
+    flex: 1 1 45%;
+    min-width: 250px;
+}
+
+/* Material Input Styling */
+.mat-form-field {
+    width: 100%;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-outline {
+    border-color: #444;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: #58A6FF;
+}
+
+.mat-form-field.mat-invalid .mat-form-field-outline {
+    border-color: red;
+}
+
+.mat-error {
+    font-size: 0.9rem;
+    color: red;
+}
+
+/* Button Styling */
+.btn-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.submit-btn {
+    padding: 12px 30px;
+    border-radius: 8px;
+    border: none;
+    background-color: #58A6FF;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #1F6FEB;
+    transform: scale(1.05);
+}
+
+/* Responsive Headings and Text */
+@media (max-width: 500px) {
+    section.contact-section h2 {
+        font-size: 1.35rem;
+        margin-bottom: 23px;
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .form-row .col, .form-inputs-row .col {
+        flex: 1 1 100%;
+        min-width: unset; /* remove min-width for stacking */
+    }
+
+    .btn-container {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,66 @@
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 80px 20px;
+    box-sizing: border-box;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #222;
+    width: 100%;
+  }
+  
+  
+  #about {
+    padding: 50px 20px;
+  }
+  
+  #about h2 {
+    text-align: center;   /* Center heading */
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #222;
+  }
+  
+  #about ul {
+    list-style: none;      /* default bullets remove */
+    max-width: 800px;
+    margin: 0 auto;        /* Center block */
+    padding-left: 0;       /* reset padding */
+    text-align: left;
+  }
+  
+  #about li {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    line-height: 1.6;
+    transition: color 0.3s ease, transform 0.2s ease;
+    position: relative;
+    padding-left: 25px;    /* space for arrow */
+  }
+  
+  /* arrow bullet */
+  #about li::before {
+    content: "➤";         /* arrow symbol */
+    position: absolute;
+    left: 0;
+    color: #333;          /* normal arrow color */
+    transition: color 0.3s ease;
+  }
+  
+  /* hover effect */
+  #about li:hover {
+    transform: translateX(5px); /* slide effect */
+    cursor: pointer;
+  }
+  
+  #about li:hover::before {
+    color: #007bff;        /* arrow color on hover */
+  }
+  

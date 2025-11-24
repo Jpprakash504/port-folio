@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+    scroll-behavior: smooth;
+  }
+  
+
+/* styles.css */
+body {
+    background-color: #f0f0f0; /* change to any color you like */
+    /* or for gradient */
+    /* color: #fff; */
+    background: linear-gradient(to right, #e3f2fd, #e3f2fd);
+    /* background: linear-gradient(to right, #6a11cb, #2575fc);  #096C6C, #096C6C*/
+    /* or for image */
+    /* background-image: url('assets/bg.jpg'); */
+    background-size: cover; /* ensures it covers entire page */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* keeps it fixed on scroll */
+    margin: 0;
+    padding: 0;
+  }
+
+
+  /* Header Navigation */
+.nav {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Center menu */
+.menu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.menu a:hover {
+  color: #0073e6;
+}
+
+/* Social links on right */
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+}
+
+.social-links a:hover {
+  color: #0073e6;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,98 @@
+/* Hero Section Container */
+#hero {
+    display: flex;
+    justify-content: center; /* center horizontally */
+    align-items: center;     /* center vertically */
+    gap: 50px;               /* spacing between left, center, right */
+    min-height: 100vh;
+    padding: 0 50px;
+    /* background: #f9f9f9;  */    /* optional background */
+  }
+  
+  /* Left Social Links */
+  .hero-social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center; /* vertically center the links */
+  }
+  
+  /* Social links icons */
+  .hero-social-links a i {
+    font-size: 28px;
+    color: #000; /* default black */
+    transition: color 0.3s ease, transform 0.3s ease; /* smooth color change */
+  }
+  
+  /* GitHub hover */
+  .hero-social-links a.github:hover i {
+    color: #181717; /* GitHub brand color */
+    transform: scale(1.2);
+  }
+  
+  /* LinkedIn hover */
+  .hero-social-links a.linkedin:hover i {
+    color: #0A66C2; /* LinkedIn brand color */
+    transform: scale(1.2);
+  }
+  /* Resume hover */
+  .hero-social-links a.resume:hover i {
+    color: #FF6B6B; /* red-ish hover for download */
+    transform: scale(1.2);
+  }
+  
+  /* Center Content */
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center text horizontally */
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  /* Right Profile Picture */
+  .profile-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 18px rgba(80,140,240,.10), 0 1.5px 6px rgba(120,130,190,.11);
+    border: 4px solid #fff;
+    background: #f2f2f2;
+    transition: transform 0.3s ease;
+  }
+  
+  .profile-img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive */
+  @media (max-width: 900px) {
+    #hero {
+      flex-direction: column;
+      gap: 30px;
+      padding: 0 20px;
+    }
+  
+    .hero-social-links {
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+  

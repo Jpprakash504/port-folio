@@ -1,0 +1,88 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #e3f2fd;
+  z-index: 1000;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.navbar-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Logo */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: gray;
+  border-radius: 3px;
+}
+
+/* Nav Links */
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+ul li a {
+  color: gray;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+ul li a:hover {
+  color: #39c6fa;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  ul {
+    position: absolute;
+    top: 60px;
+    left: -100%;
+    flex-direction: column;
+    width: 100%;
+    background: #e3f2fd;
+    transition: left 0.3s ease;
+    padding: 20px 0;
+    gap: 10px;
+  }
+
+  ul.active {
+    left: 0;
+  }
+
+  ul li {
+    text-align: center;
+  }
+}

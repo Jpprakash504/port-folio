@@ -1,0 +1,53 @@
+<section id="contact" class="contact-section">
+  <h2>Contact</h2>
+  <div class="row">
+    <div class="col-xl-12">
+      <form [formGroup]="contactForm" autocomplete="off" class="contact-form" (ngSubmit)="submit(contactForm)">
+        <!-- First Row: Name + Subject -->
+        <div class="form-row">
+          <div class="col">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label for="name">Name</mat-label>
+              <input id="name" matInput formControlName="name" placeholder="Enter Name" (keypress)="textOnly($event)" />
+              <mat-error *ngIf="contactFormSubmitted && name?.errors?.['required']">Name is required</mat-error>
+            </mat-form-field>
+          </div>
+      
+          <div class="col">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label for="subject">Subject</mat-label>
+              <input id="subject" matInput formControlName="subject" placeholder="Enter Subject" (keypress)="textOnly($event)" />
+              <mat-error *ngIf="contactFormSubmitted && subject?.errors?.['required']">Subject is required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      
+        <!-- Second Row: Email + Remarks -->
+        <div class="form-row">
+          <div class="col">
+            <mat-form-field appearance="fill" class="w-500">
+              <mat-label for="email">Email</mat-label>
+              <input id="email" type="email" matInput formControlName="email" placeholder="Enter Email" />
+              <mat-error *ngIf="contactFormSubmitted && email?.errors?.['required']">Email is required</mat-error>
+              <mat-error *ngIf="contactFormSubmitted && email?.errors?.['email']">Please enter a valid email address</mat-error>
+            </mat-form-field>
+          </div>
+      
+          <div class="col">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label for="remarks">Remarks</mat-label>
+              <input id="remarks" maxlength="250" matInput formControlName="remarks" placeholder="Enter Remarks" />
+              <mat-error *ngIf="contactFormSubmitted && remarks?.errors?.['required']">Remarks is required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      
+        <!-- Submit Button -->
+        <div class="btn-container">
+          <button type="submit" class="submit-btn">Send Mail</button>
+        </div>
+      </form>
+      
+    </div>
+  </div>
+</section>
