@@ -8,6 +8,7 @@ import { ProjectsComponent } from './component/components/projects/projects.comp
 import { SkillsComponent } from './component/components/skills/skills.component';
 import { UserComponent } from './component/components/user/user.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ChatbotComponent } from './component/components/chatbot/chatbot.component';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     ProjectsComponent,
     SkillsComponent,
-    ReactiveFormsModule],
+    ReactiveFormsModule,
+  ChatbotComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
