@@ -21,7 +21,7 @@ export class ChatbotComponent {
     "services": "We offer web development, Angular apps, and UI design.",
     "contact": "You can contact us anytime!",
     "portfolio": "Visit our portfolio section for details.",
-    "what is your experience": "3.5 Years experience in Angular Typescript"
+    "what is your experience": "3.9 Years experience in Angular Typescript"
   };
 
   toggleChatbot() {
