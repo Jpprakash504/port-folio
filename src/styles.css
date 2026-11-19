@@ -1,79 +1,128 @@
-/* You can add global styles to this file, and also import other style files */
-html, body {
-    scroll-behavior: smooth;
-  }
-  
+/* ============================================================
+   Global theme — "Midnight" dark style
+   ============================================================ */
+:root {
+  --bg: #0b1020;
+  --bg-elev: #121933;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-hover: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
 
-/* styles.css */
-body {
-    background-color: #f0f0f0; /* change to any color you like */
-    /* or for gradient */
-    /* color: #fff; */
-background: linear-gradient(to right, #f3b542, #81ceec);
-     /* background: linear-gradient(to right, #6a11cb, #2575fc);  #096C6C, #096C6C*/
-    /* or for image */
-    /* background-image: url('assets/bg.jpg'); */
-    background-size: cover; /* ensures it covers entire page */
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* keeps it fixed on scroll */
-    margin: 0;
-    padding: 0;
-  }
+  --text: #e6e9f5;
+  --text-muted: #9aa3c0;
+  --text-dim: #6b7493;
 
+  --accent: #8b5cf6;          /* violet */
+  --accent-2: #22d3ee;        /* cyan */
+  --accent-grad: linear-gradient(135deg, #8b5cf6 0%, #22d3ee 100%);
+  --accent-glow: rgba(139, 92, 246, 0.35);
 
-  /* Header Navigation */
-.nav {
-  background: #fff;
-  border-bottom: 1px solid #ddd;
-  padding: 15px 0;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --max-w: 1040px;
+
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-head: "Space Grotesk", "Inter", system-ui, sans-serif;
 }
 
-.nav .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+*, *::before, *::after { box-sizing: border-box; }
 
-.brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 0;
-}
-
-/* Center menu */
-.menu {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-}
-
-.menu a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.menu a:hover {
-  color: #0073e6;
-}
-
-/* Social links on right */
-.social-links {
-  display: flex;
-  gap: 15px;
-}
-
-.social-links a {
-  text-decoration: none;
-  color: #555;
-  font-weight: 500;
-}
-
-.social-links a:hover {
-  color: #0073e6;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* keeps headings clear of the fixed navbar */
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(900px 600px at 10% -10%, rgba(139, 92, 246, 0.18), transparent 60%),
+    radial-gradient(800px 500px at 100% 10%, rgba(34, 211, 238, 0.12), transparent 60%),
+    radial-gradient(700px 500px at 50% 110%, rgba(139, 92, 246, 0.10), transparent 60%);
+  background-attachment: fixed;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Material sets its own typography on body — keep ours */
+body.mat-typography { font-family: var(--font-body); }
+
+::selection { background: var(--accent); color: #fff; }
+
+a { color: inherit; }
+
+/* Shared section heading style (used by every section h2) */
+section h2 {
+  font-family: var(--font-head);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin: 0 0 48px;
+  color: var(--text);
+  position: relative;
+}
+
+section h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin: 14px auto 0;
+  border-radius: 4px;
+  background: var(--accent-grad);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--accent), var(--accent-2));
+  border-radius: 10px;
+  border: 2px solid var(--bg);
+}
+
+/* ============================================================
+   Angular Material form fields on a dark background
+   (component CSS can't reach Material internals, so it lives here)
+   ============================================================ */
+.contact-section .mat-mdc-form-field {
+  --mdc-outlined-text-field-input-text-color: var(--text);
+  --mdc-outlined-text-field-label-text-color: var(--text-muted);
+  --mdc-outlined-text-field-hover-label-text-color: var(--text);
+  --mdc-outlined-text-field-focus-label-text-color: var(--accent-2);
+  --mdc-outlined-text-field-outline-color: var(--border-strong);
+  --mdc-outlined-text-field-hover-outline-color: rgba(255, 255, 255, 0.35);
+  --mdc-outlined-text-field-focus-outline-color: var(--accent-2);
+  --mdc-outlined-text-field-caret-color: var(--accent-2);
+  --mdc-outlined-text-field-container-shape: 12px;
+  --mdc-outlined-text-field-error-outline-color: #f87171;
+  --mdc-outlined-text-field-error-label-text-color: #f87171;
+  --mdc-outlined-text-field-error-hover-outline-color: #f87171;
+  --mdc-outlined-text-field-error-focus-outline-color: #f87171;
+  --mdc-outlined-text-field-error-focus-label-text-color: #f87171;
+  --mdc-outlined-text-field-error-hover-label-text-color: #f87171;
+  --mat-form-field-error-text-color: #f87171;
+  --mdc-outlined-text-field-input-text-placeholder-color: var(--text-dim);
+  width: 100%;
+}
+
+/* SweetAlert2 popup in the dark theme */
+.swal2-popup {
+  background: var(--bg-elev) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border);
+  border-radius: var(--radius) !important;
+}
+.swal2-title, .swal2-html-container { color: var(--text) !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}

@@ -6,7 +6,7 @@
         <!-- First Row: Name + Subject -->
         <div class="form-row">
           <div class="col">
-            <mat-form-field appearance="fill" class="w-100">
+            <mat-form-field appearance="outline" class="w-100">
               <mat-label for="name">Name</mat-label>
               <input id="name" matInput formControlName="name" placeholder="Enter Name" (keypress)="textOnly($event)" />
               <mat-error *ngIf="contactFormSubmitted && name?.errors?.['required']">Name is required</mat-error>
@@ -14,7 +14,7 @@
           </div>
       
           <div class="col">
-            <mat-form-field appearance="fill" class="w-100">
+            <mat-form-field appearance="outline" class="w-100">
               <mat-label for="subject">Subject</mat-label>
               <input id="subject" matInput formControlName="subject" placeholder="Enter Subject" (keypress)="textOnly($event)" />
               <mat-error *ngIf="contactFormSubmitted && subject?.errors?.['required']">Subject is required</mat-error>
@@ -25,7 +25,7 @@
         <!-- Second Row: Email + Remarks -->
         <div class="form-row">
           <div class="col">
-            <mat-form-field appearance="fill" class="w-500">
+            <mat-form-field appearance="outline" class="w-100">
               <mat-label for="email">Email</mat-label>
               <input id="email" type="email" matInput formControlName="email" placeholder="Enter Email" />
               <mat-error *ngIf="contactFormSubmitted && email?.errors?.['required']">Email is required</mat-error>
@@ -34,7 +34,7 @@
           </div>
       
           <div class="col">
-            <mat-form-field appearance="fill" class="w-100">
+            <mat-form-field appearance="outline" class="w-100">
               <mat-label for="remarks">Remarks</mat-label>
               <input id="remarks" maxlength="250" matInput formControlName="remarks" placeholder="Enter Remarks" />
               <mat-error *ngIf="contactFormSubmitted && remarks?.errors?.['required']">Remarks is required</mat-error>

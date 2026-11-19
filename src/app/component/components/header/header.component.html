@@ -1,13 +1,13 @@
 <nav class="navbar">
   <div class="navbar-content">
-    <!-- <div class="logo">Santhosh</div> -->
+    <a href="#hero" class="logo" (click)="closeMenu()">JP<span>.</span></a>
 
     <!-- Hamburger Icon for Mobile -->
-    <div class="hamburger" (click)="toggleMenu()">
+    <button type="button" class="hamburger" [class.open]="showMenu" (click)="toggleMenu()" aria-label="Toggle menu">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </button>
 
     <!-- Nav Links -->
     <ul [ngClass]="{'active': showMenu}">

@@ -1,122 +1,173 @@
-/* Hero Section Container */
 #hero {
-    display: flex;
-    justify-content: center; /* center horizontally */
-    align-items: center;     /* center vertically */
-    gap: 50px;               /* spacing between left, center, right */
-    min-height: 100vh;
-    padding: 0 50px;
-    /* background: #f9f9f9;  */    /* optional background */
-  }
-  
-  /* Left Social Links */
-  .hero-social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center; /* vertically center the links */
-  }
-  
-  /* Social links icons */
-  .hero-social-links a i {
-    font-size: 28px;
-    color: #000; /* default black */
-    transition: color 0.3s ease, transform 0.3s ease; /* smooth color change */
-  }
-  
-  /* GitHub hover */
-  .hero-social-links a.github:hover i {
-    color: #181717; /* GitHub brand color */
-    transform: scale(1.2);
-  }
-  
-  /* LinkedIn hover */
-  .hero-social-links a.linkedin:hover i {
-    color: #0A66C2; /* LinkedIn brand color */
-    transform: scale(1.2);
-  }
-  /* Resume hover */
-  .hero-social-links a.resume:hover i {
-    color: #FF6B6B; /* red-ish hover for download */
-    transform: scale(1.2);
-  }
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 110px 24px 60px;
+  text-align: center;
+}
 
-  /* .whatsapp-btn {
-  font-size: 35px;
-  color: #25D366;
-  background: #ffffff;
-  padding: 10px 12px;
+/* Profile picture with rotating gradient ring */
+.profile-ring {
+  position: relative;
+  width: 196px;
+  height: 196px;
   border-radius: 50%;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-  transition: 0.3s;
-} */
- 
-
-.floating-whatsapp:hover {
-  transform: scale(1.15);
-  box-shadow: 0px 6px 18px rgba(0,0,0,0.4);
+  padding: 4px;
+  background: conic-gradient(from 0deg, var(--accent), var(--accent-2), var(--accent));
+  box-shadow: 0 0 60px var(--accent-glow);
 }
 
-.hero-social-links a.whatsapp-btn:hover {
-  transform: scale(1.1);
-  color: #09ec68; /* red-ish hover for download */
-  box-shadow: 0px 6px 14px rgba(0,0,0,0.3);
+.profile-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--bg);
+  background: var(--bg-elev);
+  transition: transform 0.4s ease;
 }
-  
-  /* Center Content */
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* center text horizontally */
-    text-align: center;
-  }
-  
-  .hero-content h1 {
-    font-size: 7.5rem;
-    margin-bottom: 10px;
-    color: #0e0d0d;
-  }
-  
-  .hero-content p {
-    font-size: 1.2rem;
-    color: #575555;
-  }
-  
-  /* Right Profile Picture */
-  .profile-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-   .profile-img {
-     width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 18px rgba(80,140,240,.10), 0 1.5px 6px rgba(120,130,190,.11);
-    border: 4px solid #fff;
-    background: #f2f2f2;
-    transition: transform 0.3s ease;
-  filter: contrast(1.08) saturate(1.08) brightness(1.02);
-  } 
-  
-  
-  .profile-img:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Responsive */
-  @media (max-width: 900px) {
-    #hero {
-      flex-direction: column;
-      gap: 30px;
-      padding: 0 20px;
-    }
-  
-    .hero-social-links {
-      flex-direction: row;
-      gap: 30px;
-    }
-  }
-  
+
+.profile-ring:hover .profile-img { transform: scale(1.04); }
+
+/* Text */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 720px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  margin-bottom: 20px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+}
+
+.hero-badge .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.6);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.6); }
+  70%  { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+}
+
+/* Override the shared section-heading style for the hero title */
+#hero h2 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  line-height: 1.1;
+  margin: 0 0 18px;
+}
+
+#hero h2::after { display: none; }
+
+.gradient-text {
+  background: var(--accent-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-content p {
+  margin: 0;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--text-muted);
+}
+
+.hero-content p strong { color: var(--text); font-weight: 600; }
+
+/* Buttons */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-primary {
+  color: #fff;
+  background: var(--accent-grad);
+  box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px var(--accent-glow);
+}
+
+.btn-ghost {
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+}
+
+.btn-ghost:hover {
+  transform: translateY(-2px);
+  background: var(--surface-hover);
+}
+
+/* Social links */
+.hero-social-links {
+  display: flex;
+  gap: 14px;
+}
+
+.hero-social-links a {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.hero-social-links a i { font-size: 20px; }
+
+.hero-social-links a:hover {
+  transform: translateY(-3px);
+  background: var(--surface-hover);
+  border-color: var(--border-strong);
+}
+
+.hero-social-links a.github:hover   { color: #ffffff; }
+.hero-social-links a.linkedin:hover { color: #3b9cff; }
+.hero-social-links a.resume:hover   { color: #f472b6; }
+.hero-social-links a.whatsapp-btn:hover { color: #25d366; }
+
+@media (max-width: 600px) {
+  .profile-ring { width: 156px; height: 156px; }
+  .hero-actions { width: 100%; }
+  .btn { flex: 1 1 auto; text-align: center; }
+}

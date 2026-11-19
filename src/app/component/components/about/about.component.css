@@ -1,66 +1,53 @@
-section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 80px 20px;
-    box-sizing: border-box;
-  }
-  
-  h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #222;
-    width: 100%;
-  }
-  
-  
-  #about {
-    padding: 50px 20px;
-  }
-  
-  #about h2 {
-    text-align: center;   /* Center heading */
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #222;
-  }
-  
-  #about ul {
-    list-style: none;      /* default bullets remove */
-    max-width: 800px;
-    margin: 0 auto;        /* Center block */
-    padding-left: 0;       /* reset padding */
-    text-align: left;
-  }
-  
-  #about li {
-    font-size: 1.1rem;
-    margin-bottom: 12px;
-    line-height: 1.6;
-    transition: color 0.3s ease, transform 0.2s ease;
-    position: relative;
-    padding-left: 25px;    /* space for arrow */
-  }
-  
-  /* arrow bullet */
-  #about li::before {
-    content: "➤";         /* arrow symbol */
-    position: absolute;
-    left: 0;
-    color: #333;          /* normal arrow color */
-    transition: color 0.3s ease;
-  }
-  
-  /* hover effect */
-  #about li:hover {
-    transform: translateX(5px); /* slide effect */
-    cursor: pointer;
-  }
-  
-  #about li:hover::before {
-    color: #007bff;        /* arrow color on hover */
-  }
-  
+#about {
+  padding: 100px 24px;
+}
+
+.about-container {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.about-right {
+  padding: 32px 36px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+#about ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#about li {
+  position: relative;
+  padding: 10px 0 10px 32px;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  border-bottom: 1px dashed var(--border);
+}
+
+#about li:last-child { border-bottom: none; }
+
+#about li strong { color: var(--text); font-weight: 600; }
+
+/* gradient check-dot bullet */
+#about li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 19px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-grad);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+@media (max-width: 600px) {
+  #about { padding: 80px 16px; }
+  .about-right { padding: 22px 20px; }
+  #about li { font-size: 1rem; }
+}
